@@ -4,13 +4,16 @@ package mysort;
  * @version 创建时间：2012-10-16 下午7:13:29 
  * 类说明 
  */
-public abstract class A<T extends  Comparable<? super T>> {//泛型要继承Comparable接口才能在compare函数使用泛型
+/*
+ * 泛型要继承Comparable接口才能在compare函数使用泛型
 	M operation = new M();
+ */
+public abstract class A<T extends  Comparable<? super T>> {
 	//public int[]a={0,7,6,5,9,8,6,4};
 	T []arr;
 	public A(T a[])
 	{   
-		arr=(T[]) a.clone();//关键的一句
+		arr=(T[]) a.clone();//arr=(T[])new Object[a.length];java不支持
 		
 		/*arr=(T[])new Object[a.length];
 		for(int i=1;i<a.length;i++)
